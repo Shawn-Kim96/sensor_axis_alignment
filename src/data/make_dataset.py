@@ -1,6 +1,4 @@
-from sensor_axis_alignment.src.data.sensor_data_gen_from_driving_simulator_data \
-    import sensor_data_generation_from_driving_simulator as dat_gen
-
+from sensor_data_gen_from_driving_simulator_data import sensor_data_generation_from_driving_simulator as dat_gen
 import numpy as np
 import pandas as pd
 
@@ -11,7 +9,7 @@ svd = np.linalg.svd
 
 class GenTestData:
     def __init__(self):
-        params = {}
+        params = dict()
 
         params['time interval'] = 0.01  # [s]
         params['init_LLA'] = [54.1002387, -4.6807492, 25]  # [deg], [deg], [m] Ballabeg, Isle of Man
@@ -93,9 +91,6 @@ class GenTestData:
 
         df.to_pickle(dst_filename)
         print('file saved')
-
-
-
 
 
 if __name__ == '__main__':
